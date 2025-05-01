@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ttcdo4nv6el5"]
+
+[sub_resource type="Curve" id="Curve_8vobc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.254438, 0.501765), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.754438, 0.501765), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_jysas"]
+curve = SubResource("Curve_8vobc")
+
+[sub_resource type="Curve" id="Curve_g3mtl"]
+_data = [Vector2(0.278107, 1), 0.0, 0.0, 0, 0, Vector2(0.83432, 1), 0.0, 0.0, 0, 0, Vector2(0.860947, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8vobc"]
+curve = SubResource("Curve_g3mtl")
+
+[resource]
+albedo_texture = SubResource("CurveTexture_jysas")
+heightmap_scale = 16.0
+heightmap_texture = SubResource("CurveTexture_8vobc")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+uv1_world_triplanar = true

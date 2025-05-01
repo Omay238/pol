@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6urjs1576g2g"]
+
+[ext_resource type="Texture2D" uid="uid://6ltmpxmjoo7j" path="res://assets/ceil.jpg" id="1_b6sc7"]
+
+[resource]
+albedo_texture = ExtResource("1_b6sc7")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

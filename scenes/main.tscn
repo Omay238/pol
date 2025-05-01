@@ -1,0 +1,678 @@
+[gd_scene load_steps=45 format=3 uid="uid://co3ic5s8i8s41"]
+
+[ext_resource type="PackedScene" uid="uid://bgja04r0amkq2" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://ddyvv6l2ecmct" path="res://assets/ws.png" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://cnxsrlo4wnock" path="res://scripts/bettercsg.gd" id="2_tefeu"]
+[ext_resource type="Material" uid="uid://twdbjmtkii1u" path="res://assets/walls.tres" id="3_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://lwf10ay6dqyj" path="res://assets/hc.png" id="3_sugp2"]
+[ext_resource type="Material" uid="uid://cuya581ai4ji2" path="res://assets/floor.tres" id="3_trceg"]
+[ext_resource type="AudioStream" uid="uid://dm8nf57tnrsak" path="res://assets/song.wav" id="4_jyhfs"]
+[ext_resource type="Material" uid="uid://c6urjs1576g2g" path="res://assets/ceiling.tres" id="5_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://cy2xk0tuyi2li" path="res://assets/itch.png" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cssp4ohlkfmv7" path="res://assets/lmao.png" id="6_85g3d"]
+[ext_resource type="Material" uid="uid://ttcdo4nv6el5" path="res://assets/pillar.tres" id="6_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://dymg7le24u1q3" path="res://assets/book.glb" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bnpxoe1wof0jq" path="res://assets/sign.glb" id="8_tipki"]
+[ext_resource type="Script" uid="uid://cxqg6g6rfecdf" path="res://scripts/lights.gd" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://cju4ur57fy012" path="res://assets/musak.png" id="11_jbj1t"]
+[ext_resource type="Material" uid="uid://8s7iqx65y0la" path="res://assets/text.tres" id="14_jbj1t"]
+[ext_resource type="ArrayOccluder3D" uid="uid://wm5g8ypmid1o" path="res://scenes/main.occ" id="17_muem4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_muem4"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_dp3eg"]
+sky_material = SubResource("ProceduralSkyMaterial_muem4")
+
+[sub_resource type="Environment" id="Environment_0ld40"]
+background_mode = 2
+sky = SubResource("Sky_dp3eg")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_texture = ExtResource("2_0wfyh")
+
+[sub_resource type="QuadMesh" id="QuadMesh_sugp2"]
+material = SubResource("StandardMaterial3D_0wfyh")
+size = Vector2(5, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
+albedo_texture = ExtResource("3_sugp2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tbgi4"]
+material = SubResource("StandardMaterial3D_jyhfs")
+size = Vector2(4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+albedo_texture = ExtResource("5_tbgi4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_o6xl0"]
+material = SubResource("StandardMaterial3D_tefeu")
+size = Vector2(4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_texture = ExtResource("6_85g3d")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ya4ey"]
+material = SubResource("StandardMaterial3D_choun")
+size = Vector2(8, 5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_muem4"]
+load_path = "res://.godot/imported/godots.png-5fecbad2367cde7a5ade077daa2d9508.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
+albedo_texture = SubResource("CompressedTexture2D_muem4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_choun"]
+material = SubResource("StandardMaterial3D_eb6dy")
+size = Vector2(10, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp3eg"]
+albedo_texture = ExtResource("11_jbj1t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ld40"]
+material = SubResource("StandardMaterial3D_dp3eg")
+size = Vector2(10, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6xl0"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jbj1t"]
+size = Vector3(5, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_muem4"]
+size = Vector3(2.5, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_jkv2x"]
+material = ExtResource("14_jbj1t")
+text = "Intro"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_muem4"]
+material = ExtResource("14_jbj1t")
+text = "Website Redesign"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_jbj1t"]
+material = ExtResource("14_jbj1t")
+text = "Greek Play Project
+"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_dp3eg"]
+material = ExtResource("14_jbj1t")
+text = "Synthesis Project"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_0ld40"]
+material = ExtResource("14_jbj1t")
+text = "Programming"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_gqmmt"]
+material = ExtResource("14_jbj1t")
+text = "Make a Game"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_jscy8"]
+material = ExtResource("14_jbj1t")
+text = "Produce Music"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_yc10j"]
+material = ExtResource("14_jbj1t")
+text = "Outro"
+font_size = 127
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0ld40")
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="World" type="StaticBody3D" parent="."]
+script = ExtResource("2_tefeu")
+metadata/_edit_lock_ = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="World"]
+transform = Transform3D(1, -0.000528309, 0.000665376, 0.000528373, 1, -9.75566e-05, -0.000665325, 9.79004e-05, 1, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -2.99187e-08, -3.4035e-12, 1, -3.73257e-09, 2.99187e-08, 0, 1, -0.00353171, -0.464477, -4.51869)
+size = Vector3(24, 1, 31)
+material = ExtResource("3_trceg")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 8, 7.5)
+size = Vector3(1, 18, 9)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -2.09548e-09, -6.12488e-12, 1, -2.61934e-10, 2.09548e-09, 0, 1, -3.50001, 7.99525, 11.506)
+size = Vector3(17, 18, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 11.5)
+material_override = ExtResource("3_eb6dy")
+size = Vector3(8, 18, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 8, 7.5)
+size = Vector3(1, 18, 9)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.28608e-12, -2.38651e-09, -2.39265e-09, 1, 0, 2.38651e-09, 2.98314e-10, 1, 11.5, 8, -11.5)
+size = Vector3(1, 18, 17)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 8, -11.5)
+size = Vector3(1, 18, 17)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -19.5)
+size = Vector3(24, 18, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 11.5)
+size = Vector3(24, 6, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.57161e-09, -6.18172e-12, 1, -1.96451e-10, 1.57161e-09, 0, 1, 11.5, 13.5, -4)
+size = Vector3(1, 7, 32)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.16415e-09, -6.21725e-12, 1, -1.45519e-10, 1.16415e-09, 0, 1, -11.5, 13.5, -4)
+size = Vector3(1, 7, 32)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -4.12825e-12, -3.65544e-08, -3.65572e-08, 1, 1.38243e-10, 3.65544e-08, 4.5693e-09, 1, 2.55881e-07, 16.5, -4)
+size = Vector3(24, 1, 32)
+material = ExtResource("5_a8y0u")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.10134e-12, -1.74623e-10, -1.80982e-10, 1, 0, 1.74623e-10, 2.18279e-11, 1, -6, 8, -10.004)
+radius = 2.0
+height = 16.0
+sides = 32
+material = ExtResource("6_jkv2x")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.84741e-12, -9.0804e-09, -9.08588e-09, 1, 5.09317e-11, 9.0804e-09, 1.13505e-09, 1, 6, 8, -10.005)
+radius = 2.0
+height = 18.0
+sides = 32
+material = ExtResource("6_jkv2x")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -7.74744e-08, 1.25056e-12, 1, -9.6552e-09, 7.74744e-08, 0, 1, -1.00378e-05, -0.5, -31)
+size = Vector3(96, 1, 23)
+material = ExtResource("3_trceg")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -9.14442e-08, 2.6219e-12, 1, -1.14014e-08, 9.14442e-08, 0, 1, 29.5, -0.500001, -18.5)
+size = Vector3(37, 1, 48)
+material = ExtResource("3_trceg")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -9.06293e-08, 2.53664e-12, 1, -1.12996e-08, 9.06293e-08, 0, 1, -29.5, -0.46883, -18.0392)
+size = Vector3(37, 1, 49)
+material = ExtResource("3_trceg")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.08208e-07, 4.26326e-12, 1, -1.34896e-08, 1.08208e-07, 0, 1, -37.5, 0.0449059, -18.0565)
+size = Vector3(1, 2, 27)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.19035e-07, 5.32197e-12, 1, -1.4843e-08, 1.19035e-07, 0, 1, -24.5, 0.0449058, -5.05648)
+size = Vector3(27, 2, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.08324e-07, 4.27036e-12, 1, -1.35042e-08, 1.08324e-07, 0, 1, 37.5, 0.00528284, -18.0066)
+size = Vector3(1, 2, 27)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.17579e-07, 5.17986e-12, 1, -1.46611e-08, 1.17579e-07, 0, 1, 24.5, 0.0190187, -4.52438)
+size = Vector3(27, 2, 0.001)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.28406e-07, 6.23857e-12, 1, -1.60144e-08, 1.28406e-07, 0, 1, 0.0173237, 0.0423602, -31.0565)
+size = Vector3(76, 2, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.12457e-07, 4.67537e-12, 1, -1.40208e-08, 1.12457e-07, 0, 1, -37.4968, 8.5449, -18.0571)
+size = Vector3(1, 7, 27)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.234e-07, 5.74829e-12, 1, -1.53887e-08, 1.234e-07, 0, 1, -24.4968, 8.54491, -5.05707)
+size = Vector3(27, 7, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.13447e-07, 4.77485e-12, 1, -1.41445e-08, 1.13447e-07, 0, 1, 37.5031, 8.00528, -18.0072)
+size = Vector3(1, 6, 27)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.1985e-07, 5.40012e-12, 1, -1.49448e-08, 1.1985e-07, 0, 1, 24.5032, 8.01902, -4.52496)
+size = Vector3(27, 6, 0.001)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.33354e-07, 6.72173e-12, 1, -1.66256e-08, 1.33354e-07, 0, 1, 0.020494, 8.54236, -31.057)
+size = Vector3(76, 7, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -7.7649e-08, 1.27187e-12, 1, -9.67702e-09, 7.7649e-08, 0, 1, 0.00580208, 10.5, -31.0011)
+size = Vector3(96, 1, 23)
+material = ExtResource("5_a8y0u")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -8.89995e-08, 2.38032e-12, 1, -1.10958e-08, 8.89995e-08, 0, 1, 30.0058, 10.5, -18.501)
+size = Vector3(36, 1, 48)
+material = ExtResource("5_a8y0u")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -9.09786e-08, 2.57216e-12, 1, -1.13432e-08, 9.09786e-08, 0, 1, -30.0492, 10.5312, -18.0184)
+size = Vector3(36, 1, 49)
+material = ExtResource("5_a8y0u")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -1.56579e-08, -4.80327e-12, 1, -1.94996e-09, 1.56579e-08, 0, 1, -30.004, 5, 6)
+size = Vector3(37, 12, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -2.92785e-08, -3.46745e-12, 1, -3.65253e-09, 2.92785e-08, 0, 1, -48.004, 5, -18)
+size = Vector3(1, 12, 49)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -4.35975e-08, -2.06768e-12, 1, -5.43514e-09, 4.35975e-08, 0, 1, -0.00402067, 4.96989, -41.9621)
+size = Vector3(97, 12, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -5.82077e-08, -6.32383e-13, 1, -7.25413e-09, 5.82077e-08, 0, 1, 47.996, 4.9699, -18.4621)
+size = Vector3(1, 12, 48)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -6.87432e-08, 3.97904e-13, 1, -8.57108e-09, 6.87432e-08, 0, 1, 29.996, 4.9699, 5.03793)
+size = Vector3(37, 12, 1)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -8.184e-08, 1.67688e-12, 1, -1.02009e-08, 8.184e-08, 0, 1, -24.9973, 4.98847, -18.4867)
+size = Vector3(1, 12, 28)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -8.57981e-08, 2.06768e-12, 1, -1.06957e-08, 8.57981e-08, 0, 1, 1.00265, 4.97474, -25.9694)
+size = Vector3(1, 12, 13)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(2.02213e-07, 0.000430816, -1, 0.00062593, 1, 0.000430806, 1, -0.000625929, -7.50297e-08, -24.9973, 4.98848, -18.4867)
+size = Vector3(1, 12, 28)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(1, -1.12266e-12, -8.19564e-08, 1.69109e-12, 1, -1.02154e-08, 8.19564e-08, 0, 1, 25.0026, 4.96206, -18.4534)
+size = Vector3(1, 12, 28)
+material = ExtResource("3_eb6dy")
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="World/CSGCombiner3D"]
+transform = Transform3D(2.02097e-07, 0.000430816, -1, 0.00062593, 1, 0.000430806, 1, -0.00062593, -7.50297e-08, 25.0026, 4.96206, -18.4534)
+size = Vector3(1, 12, 28)
+material = ExtResource("3_eb6dy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1953, 4.99094, -17.9586)
+mesh = SubResource("QuadMesh_sugp2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, -17.9678)
+mesh = SubResource("QuadMesh_tbgi4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29, 4, -19.0132)
+mesh = SubResource("QuadMesh_o6xl0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -25.5367, 4.46789, -25.1417)
+mesh = SubResource("QuadMesh_ya4ey")
+skeleton = NodePath("../MeshInstance3D3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.51647, 4, -20.025)
+mesh = SubResource("QuadMesh_choun")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.39873, 4, -20.025)
+mesh = SubResource("QuadMesh_0ld40")
+skeleton = NodePath("../MeshInstance3D4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5655, 0, -30)
+stream = ExtResource("4_jyhfs")
+volume_db = -20.0
+max_db = -15.0
+autoplay = true
+max_distance = 15.0
+panning_strength = 0.0
+
+[node name="1" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -26, 0, -4)
+collision_layer = 3
+metadata/content = "I had a few weeks to work on this, with around 17 pages to rewrite. I probably spent 2 weeks on just the rewriting part. After that, it was fairly smooth going to put it into the website. The hardest part was getting the layout in a way that looked good, as the tools to edit were subpar at best. Working with people makes it much easier for me to stay on track, as I feel I have a deal to make up with someone."
+
+[node name="book" parent="1" instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68434e-14, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="2" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -39, 0, -21)
+collision_layer = 3
+metadata/content = "This was an incredibly fun project. Even though the night before turning it in I stayed up late editing it, it was still fun. Writing the script and making props was boring, but with the group, most of the time was just spent joking which made it much more enjoyable. After making props, we spent around two days recording the clips. I was the camera person, and just narrated from behind the camera. After getting all of the files, I edited them together in one night as we were running behind schedule. I enjoyed working on it hands-on because I actually spent the time working actively, more able to enjoy it than just get it done."
+
+[node name="book2" parent="2" instance=ExtResource("7_o6xl0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="3" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.5, 0, -32)
+collision_layer = 3
+metadata/content = "To say I struggled with this project would be an understatement. Taking the Audio Production made it abundantly clear that I am not as good at making music as I had thought. I attempted to remake the song Resonance by HOME, which I think I did decently at. I did decently at the actual production steps, however creating music was not too easy for me. I plan to study music theory over summer break in an attempt to improve. I think I have a good musical ear, however I cannot utilize it. I can tell when it’s bad, but can’t tell what to do to make it good."
+
+[node name="book3" parent="3" instance=ExtResource("7_o6xl0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="4" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.5, 0, -32)
+collision_layer = 3
+metadata/content = "This relates most to The Having of Wonderful Ideas. Coding gives me a good way for when I have an idea to bring it to life. Example: the game. When we first had to do POL’s, I didn’t want to do a slide (they’re boring) and decided a game would show what I can do.The way I usually start the story is this: in fourth grade, I was ahead in Tom’s math class. We were using Khan Academy, and Tom recommended that I try the programming section. However, I did have some experience before that. Both my biological father and step-father were into programming. My biological father made mobile games, which despite not being great made a decent amount of money. My step-father had been in the programming world for a much longer time, in the early days of computing. He’s been doing it since the 80s or so, and is well known within some communities. But, I did start myself with Khan Academy. It used JavaScript, an objectively pretty bad programming language, but I know it well so I use it. I learned a graphics library for JavaScript called Processing. I used Khan Academy for years, but wanted to expand my knowledge. Then, I moved to Replit, however, I don’t support them anymore. While in its prime, Replit was great. It provided free, albeit weak servers to do whatever you wanted on them. There, I learned Python, my step-fathers most used language, however I still primarily did JavaScript. I continued improving, and started putting my code on GitHub. For a few years, I didn’t do much with programming, continuing with my mediocre stuff, although more recently I’ve been putting a lot of time into expanding, contributing to more open source, learning more languages, and creating bigger things. I’ve been working on learning C++ in order to create faster programs, however I am still not spectacular at it, as it is incredibly difficult compared to what I had used previously."
+
+[node name="book4" parent="4" instance=ExtResource("7_o6xl0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="intro" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -10)
+collision_layer = 3
+metadata/content = "Hello, and welcome to my Presentation of Learning! These messages can be activated with a simple click, so feel free to read them. They primarily serve to let the reviewers see my reflections, as I don't have a good way to put in links here. Enjoy! Controls: WASD to move, Click to interact, E to zoom"
+
+[node name="book" parent="intro" instance=ExtResource("7_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68434e-14, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="intro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="arrows" type="Node3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, -0.42928, 0)
+mesh = SubResource("BoxMesh_jbj1t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 0.999999, 0, -0.707107, 0, 0.707107, 20, -0.42928, -0.5)
+mesh = SubResource("BoxMesh_muem4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(-0.292893, 1.0677e-07, 1.70711, 6.25445e-08, 0.999999, 0, 0.292893, -1.0677e-07, 1.70711, 20, -0.42928, 0.5)
+mesh = SubResource("BoxMesh_muem4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -0.42928, 0)
+mesh = SubResource("BoxMesh_jbj1t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 0.999999, 0, -0.707107, 0, 0.707107, -22.5, -0.42928, -0.5)
+mesh = SubResource("BoxMesh_muem4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="arrows"]
+transform = Transform3D(-0.292893, 1.0677e-07, 1.70711, 6.25445e-08, 0.999999, 0, 0.292893, -1.0677e-07, 1.70711, -22.5, -0.42928, 0.5)
+mesh = SubResource("BoxMesh_muem4")
+
+[node name="sign" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(-0.103528, 0, -0.38637, 0, 0.4, 0, 0.38637, 0, -0.103528, 1.80383, 2, -10.1334)
+
+[node name="lights" type="Node3D" parent="."]
+script = ExtResource("10_choun")
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16.0832, 0)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16.0832, -14)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -18, 16.0832, 0)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -30, 16.0832, 0)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42, 16.0832, 0)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42, 16.0832, -12)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42, 16.0832, -25)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -42, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -31, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -18, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 20, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42, 16.0832, -36)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42, 16.0832, -27)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42, 16.0832, -17)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42, 16.0832, -7)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 41.975, 16.0832, 0.915493)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 30.975, 16.0832, -0.084507)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 19.975, 16.0832, -0.084507)
+light_bake_mode = 1
+spot_range = 30.0
+spot_attenuation = 0.25
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -13.7998)
+
+[node name="texts" type="Node3D" parent="."]
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -17.1962, 7, -4.46836)
+mesh = SubResource("TextMesh_jkv2x")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -31.1962, 7, -4.46836)
+mesh = SubResource("TextMesh_muem4")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(-1.14267e-06, 0, -1, 0, 1, 0, 1, 0, -1.14267e-06, -38.1962, 7, -25.1817)
+mesh = SubResource("TextMesh_jbj1t")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, -12.1962, 7, -31.5818)
+mesh = SubResource("TextMesh_dp3eg")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, 10.8038, 7, -31.5818)
+mesh = SubResource("TextMesh_0ld40")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, 30.8038, 7, -31.5818)
+mesh = SubResource("TextMesh_gqmmt")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1.2301e-06, 0, 1, 0, 1, 0, -1, 0, 1.2301e-06, 38.0266, 7, -11.5818)
+mesh = SubResource("TextMesh_jscy8")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.27381e-06, 0, 1, 0, 1.27381e-06, 0, 1, 17.8003, 7, -4.1377)
+mesh = SubResource("TextMesh_yc10j")
+skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("17_muem4")
+bake_mask = 4294966273
+metadata/_edit_lock_ = true
