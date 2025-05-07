@@ -40,7 +40,7 @@ jobs:
           unzip -qq -j Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release Web
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release Windows\ Desktop
-          ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release MacOS
+          ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release macOS
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release Linux
           mv export/windows/pol.exe export/macos/pol.dmg export/linux/pol.x86_64 export/web/dist
           tree export/web > export/web/tree.txt
