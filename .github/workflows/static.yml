@@ -32,12 +32,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Install and build
         run: |
-          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
-          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          wget -q https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          wget -q https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
           mkdir -p ~/.local/share/godot/export_templates/4.4.1.stable
           mkdir -p export/web export/windows export/macos export/linux export/web/dist
-          unzip Godot_v4.4.1-stable_linux.x86_64.zip
-          unzip -j Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable
+          unzip -qq Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip -qq -j Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release Web
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release Windows
           ./Godot_v4.4.1-stable_linux.x86_64 --headless --export-release MacOS
