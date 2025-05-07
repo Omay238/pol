@@ -21,7 +21,7 @@ func _ready() -> void:
 			mes.mesh.bottom_radius = i.radius
 			mes.mesh.height = i.height
 			mes.mesh.radial_segments = i.sides
-		mes.position = Vector3(round(i.position.x * 2.0) * 0.5, round(i.position.y * 2.0) * 0.5, round(i.position.z * 2.0) * 0.5) + Vector3(0.0001 * n, 0.0001 * n, 0.0001 * n)
+		mes.position = Vector3(round(i.position.x * 2.0) * 0.5, round(i.position.y * 2.0) * 0.5, round(i.position.z * 2.0) * 0.5)
 		mes.rotation = i.rotation
 		mes.scale = i.scale
 		mes.mesh.material = i.material

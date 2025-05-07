@@ -15,8 +15,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("zoom"):
 		var tween := create_tween()
 		tween.tween_property($Camera3D, "fov", 90, 0.25)
-	if event.is_action("exit"):
-		get_tree().quit()
+	#if event.is_action("exit"):
+		#get_tree().quit()
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENSITIVITY;
 		$Camera3D.rotation_degrees.x -= event.relative.y * MOUSE_SENSITIVITY;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://co3ic5s8i8s41"]
+[gd_scene load_steps=73 format=3 uid="uid://co3ic5s8i8s41"]
 
 [ext_resource type="PackedScene" uid="uid://bgja04r0amkq2" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ddyvv6l2ecmct" path="res://assets/ws.png" id="2_0wfyh"]
@@ -15,8 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://bnpxoe1wof0jq" path="res://assets/sign.glb" id="8_tipki"]
 [ext_resource type="Script" uid="uid://cxqg6g6rfecdf" path="res://scripts/lights.gd" id="10_choun"]
 [ext_resource type="Texture2D" uid="uid://cju4ur57fy012" path="res://assets/musak.png" id="11_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://dxwkv5xx5c85a" path="res://assets/ohyeahmusic.jpg" id="12_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://c3wcgusv2wo76" path="res://assets/progamer.jpg" id="13_0ld40"]
+[ext_resource type="Texture2D" uid="uid://dx117rgnodb0e" path="res://assets/idopeno.png" id="14_gqmmt"]
 [ext_resource type="Material" uid="uid://8s7iqx65y0la" path="res://assets/text.tres" id="14_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://krsg58d08j0x" path="res://assets/mehself.jpg" id="15_yc10j"]
+[ext_resource type="Texture2D" uid="uid://bwo1msxwaappj" path="res://assets/lester1.jpg" id="16_jscy8"]
+[ext_resource type="Texture2D" uid="uid://doqo1nx712bdj" path="res://assets/roadrunner.png" id="16_og1vs"]
 [ext_resource type="ArrayOccluder3D" uid="uid://wm5g8ypmid1o" path="res://scenes/main.occ" id="17_muem4"]
+[ext_resource type="Texture2D" uid="uid://bcvs84j22u7vm" path="res://assets/lester.jpg" id="17_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://cd5hv3cddaqei" path="res://assets/mesh.glb" id="24_y6deb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_muem4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,7 +37,6 @@ sky_material = SubResource("ProceduralSkyMaterial_muem4")
 background_mode = 2
 sky = SubResource("Sky_dp3eg")
 tonemap_mode = 2
-ssao_enabled = true
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
@@ -77,6 +84,63 @@ albedo_texture = ExtResource("11_jbj1t")
 material = SubResource("StandardMaterial3D_dp3eg")
 size = Vector2(10, 6)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ld40"]
+albedo_texture = ExtResource("12_dp3eg")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gqmmt"]
+material = SubResource("StandardMaterial3D_0ld40")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqmmt"]
+albedo_texture = ExtResource("13_0ld40")
+
+[sub_resource type="QuadMesh" id="QuadMesh_yc10j"]
+material = SubResource("StandardMaterial3D_gqmmt")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc10j"]
+albedo_texture = ExtResource("14_gqmmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jscy8"]
+material = SubResource("StandardMaterial3D_yc10j")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jscy8"]
+albedo_texture = ExtResource("15_yc10j")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pm3ni"]
+material = SubResource("StandardMaterial3D_jscy8")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wyq8"]
+transparency = 1
+albedo_texture = ExtResource("16_og1vs")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vxglm"]
+material = SubResource("StandardMaterial3D_2wyq8")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm3ni"]
+albedo_texture = ExtResource("16_jscy8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_y6deb"]
+material = SubResource("StandardMaterial3D_pm3ni")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og1vs"]
+albedo_texture = ExtResource("16_jscy8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2wyq8"]
+material = SubResource("StandardMaterial3D_og1vs")
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6deb"]
+albedo_texture = ExtResource("17_pm3ni")
+
+[sub_resource type="QuadMesh" id="QuadMesh_og1vs"]
+material = SubResource("StandardMaterial3D_y6deb")
+size = Vector2(5, 7)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6xl0"]
 size = Vector3(1, 2, 1)
 
@@ -89,6 +153,21 @@ size = Vector3(2.5, 1, 1)
 [sub_resource type="TextMesh" id="TextMesh_jkv2x"]
 material = ExtResource("14_jbj1t")
 text = "Intro"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_og1vs"]
+material = ExtResource("14_jbj1t")
+text = "Class of 2027"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_vxglm"]
+material = ExtResource("14_jbj1t")
+text = "Sophomore POL"
+font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_2wyq8"]
+material = ExtResource("14_jbj1t")
+text = "Leonard Maculo"
 font_size = 127
 
 [sub_resource type="TextMesh" id="TextMesh_muem4"]
@@ -122,10 +201,21 @@ material = ExtResource("14_jbj1t")
 text = "Produce Music"
 font_size = 127
 
-[sub_resource type="TextMesh" id="TextMesh_yc10j"]
+[sub_resource type="TextMesh" id="TextMesh_2f3dj"]
 material = ExtResource("14_jbj1t")
 text = "Outro"
 font_size = 127
+
+[sub_resource type="TextMesh" id="TextMesh_yc10j"]
+material = ExtResource("14_jbj1t")
+text = "“I much prefer the 
+sharpest criticism of 
+a single intelligent
+man to the 
+thoughtless 
+approval 
+of the masses.”"
+font_size = 100
 
 [node name="Node3D" type="Node3D"]
 
@@ -283,7 +373,7 @@ size = Vector3(76, 7, 1)
 material = ExtResource("3_eb6dy")
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="World/CSGCombiner3D"]
-transform = Transform3D(1, -1.12266e-12, -7.7649e-08, 1.27187e-12, 1, -9.67702e-09, 7.7649e-08, 0, 1, 0.00580208, 10.5, -31.0011)
+transform = Transform3D(1, -1.12266e-12, -7.77072e-08, 1.27187e-12, 1, -9.6843e-09, 7.77072e-08, 0, 1, 0.00580208, 10.5, -31.0011)
 size = Vector3(96, 1, 23)
 material = ExtResource("5_a8y0u")
 
@@ -347,32 +437,67 @@ transform = Transform3D(2.02097e-07, 0.000430816, -1, 0.00062593, 1, 0.000430806
 size = Vector3(1, 12, 28)
 material = ExtResource("3_eb6dy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Wesbite" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1953, 4.99094, -17.9586)
 mesh = SubResource("QuadMesh_sugp2")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Hack Club" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, -17.9678)
 mesh = SubResource("QuadMesh_tbgi4")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="Itch" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29, 4, -19.0132)
 mesh = SubResource("QuadMesh_o6xl0")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="Movie" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -25.5367, 4.46789, -25.1417)
 mesh = SubResource("QuadMesh_ya4ey")
-skeleton = NodePath("../MeshInstance3D3")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="Godot" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.51647, 4, -20.025)
 mesh = SubResource("QuadMesh_choun")
-skeleton = NodePath("../MeshInstance3D4")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+[node name="Musik" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.39873, 4, -20.025)
 mesh = SubResource("QuadMesh_0ld40")
-skeleton = NodePath("../MeshInstance3D4")
+
+[node name="ohyeahmusic" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.5999, 4.34478, -19.0031)
+mesh = SubResource("QuadMesh_gqmmt")
+
+[node name="ohyeahcode" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.385, 4.34478, -19.0031)
+mesh = SubResource("QuadMesh_yc10j")
+
+[node name="certifiedcode" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.5255, 4.34478, -23.3071)
+mesh = SubResource("QuadMesh_yc10j")
+
+[node name="certifiedmusic" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.521, 4.34478, -9.86955)
+mesh = SubResource("QuadMesh_jscy8")
+
+[node name="sunburn" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1145, 4.34478, -17.9311)
+mesh = SubResource("QuadMesh_pm3ni")
+
+[node name="runner" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, -18.982)
+mesh = SubResource("QuadMesh_vxglm")
+
+[node name="lester" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.1426, 4.34478, -15.1853)
+mesh = SubResource("QuadMesh_y6deb")
+
+[node name="lester2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.1426, 4.34478, -15.1853)
+mesh = SubResource("QuadMesh_2wyq8")
+
+[node name="lester3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -24.4878, 4.34478, -15.1853)
+mesh = SubResource("QuadMesh_og1vs")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5655, 0, -30)
@@ -469,9 +594,6 @@ mesh = SubResource("BoxMesh_muem4")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="arrows"]
 transform = Transform3D(-0.292893, 1.0677e-07, 1.70711, 6.25445e-08, 0.999999, 0, 0.292893, -1.0677e-07, 1.70711, -22.5, -0.42928, 0.5)
 mesh = SubResource("BoxMesh_muem4")
-
-[node name="sign" parent="." instance=ExtResource("8_tipki")]
-transform = Transform3D(-0.103528, 0, -0.38637, 0, 0.4, 0, 0.38637, 0, -0.103528, 1.80383, 2, -10.1334)
 
 [node name="lights" type="Node3D" parent="."]
 script = ExtResource("10_choun")
@@ -632,47 +754,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -13.7998)
 
 [node name="texts" type="Node3D" parent="."]
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="texts"]
+[node name="Intro" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -17.1962, 7, -4.46836)
 mesh = SubResource("TextMesh_jkv2x")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="texts"]
+[node name="2027" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -0.0146706, 8.73142, -18.6)
+mesh = SubResource("TextMesh_og1vs")
+
+[node name="Sophomore POL" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -0.0152123, 10.7093, -18.6001)
+mesh = SubResource("TextMesh_vxglm")
+
+[node name="Leonard Maculo2" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -0.0146706, 12.7314, -18.6)
+mesh = SubResource("TextMesh_2wyq8")
+
+[node name="Website Redesign" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(1, 0, -1.09896e-06, 0, 1, 0, 1.09896e-06, 0, 1, -31.1962, 7, -4.46836)
 mesh = SubResource("TextMesh_muem4")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="texts"]
+[node name="Greek Play Project" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(-1.14267e-06, 0, -1, 0, 1, 0, 1, 0, -1.14267e-06, -38.1962, 7, -25.1817)
 mesh = SubResource("TextMesh_jbj1t")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="texts"]
+[node name="Synthesis Project" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, -12.1962, 7, -31.5818)
 mesh = SubResource("TextMesh_dp3eg")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="texts"]
+[node name="Programming" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, 10.8038, 7, -31.5818)
 mesh = SubResource("TextMesh_0ld40")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="texts"]
+[node name="Make a Game" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(-1, 0, 1.18638e-06, 0, 1, 0, -1.18638e-06, 0, -1, 30.8038, 7, -31.5818)
 mesh = SubResource("TextMesh_gqmmt")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="texts"]
+[node name="Produce Music" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(1.2301e-06, 0, 1, 0, 1, 0, -1, 0, 1.2301e-06, 38.0266, 7, -11.5818)
 mesh = SubResource("TextMesh_jscy8")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="texts"]
+[node name="Outro" type="MeshInstance3D" parent="texts"]
 transform = Transform3D(1, 0, -1.27381e-06, 0, 1, 0, 1.27381e-06, 0, 1, 17.8003, 7, -4.1377)
+mesh = SubResource("TextMesh_2f3dj")
+
+[node name="Outro2" type="MeshInstance3D" parent="texts"]
+transform = Transform3D(1, 0, -1.27381e-06, 0, 1, 0, 1.27381e-06, 0, 1, 18.2791, 5.07918, -17.8603)
 mesh = SubResource("TextMesh_yc10j")
-skeleton = NodePath("../../root/@EditorNode@21281/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11491/@VSplitContainer@11143/@HSplitContainer@11145/@HSplitContainer@11147/@Control@11148/@SubViewportContainer@11149/@SubViewport@11150/Node3D/sign")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("17_muem4")
 bake_mask = 4294966273
 metadata/_edit_lock_ = true
+
+[node name="sign" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(-0.103528, 0, -0.38637, 0, 0.4, 0, 0.38637, 0, -0.103528, 1.80383, 2, -10.1334)
+visible = false
+
+[node name="mesh" parent="." instance=ExtResource("24_y6deb")]
+transform = Transform3D(-1.5, 0, 2.26494e-07, 0, 1.5, 0, -2.26494e-07, 0, -1.5, -23.4448, 3.48091, -17.1202)
